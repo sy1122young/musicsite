@@ -1,0 +1,140 @@
+/* Variables */
+:root {
+  --search-box-height: 50px;
+  --background-color: #282838;
+  --outline-color: #dedbd8;
+  --font: "arima-koshi", sans-serif;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "arima-koshi";
+  src: url(../fonts/arima-koshi/ArimaKoshi-Medium.otf);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  /* Center contents */
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  font-family: var(--font);
+}
+
+/* Song card */
+#card {
+  display: flex;
+  /* Stack */
+  flex-direction: column;
+  width: 45%;
+  /* Allows a little shrinkage */
+  min-height: 80%;
+  height: auto;
+  background-color: var(--outline-color);
+  /* Round edges */
+  border-radius: 30px;
+  padding: 10px;
+  margin: 20px;
+}
+
+/* Song art */
+img {
+  height: 100%;
+  width: 100%;
+  /* Round edges */
+  border-radius: 20px;
+}
+
+/* Song info wrap */
+.info-wrap {
+  /* Grow ratio */
+  flex: 1;
+  /* Stack and center contents */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Song info */
+.info-wrap div {
+  margin-bottom: 10px;
+}
+
+/* First song info. Move the top child down a little to fix weird bug */
+.info-wrap div:first-child {
+  margin-top: 10px;
+}
+
+/* Div containing musical notes for the background */
+.musical-notes {
+  display: block;
+  margin: auto;
+  position: relative;
+  width: 50%;
+  min-width: 300px;
+  height: 200px;
+  color: var(--outline-color);
+}
+
+/* Musical notes for the background */
+.note-1,
+.note-2,
+.note-3,
+.note-4 {
+  position: absolute;
+  /* Animation call */
+  animation: notes 2s infinite linear;
+  font-size: 35px;
+  opacity: 0;
+}
+
+.note-1 {
+  /* Placement inside parent */
+  top: 60px;
+  left: 0;
+  animation-delay: 0.5s;
+}
+
+.note-2 {
+  /* Placement inside parent */
+  top: 30px;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.note-3 {
+  /* Placement inside parent */
+  top: 90px;
+  left: 60%;
+  animation-delay: 1.5s;
+}
+
+.note-4 {
+  /* Placement inside parent */
+  top: 40px;
+  left: 90%;
+  animation-delay: 2s;
+}
+
+/* Musical note animation */
+@keyframes notes {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) translate(50%, -50%);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(1.5) translate(100%, -100%);
+  }
+  100% {
+    transform: scale(1.5) translate(100%, -100%);
+    opacity: 0;
+  }
+}

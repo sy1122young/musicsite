@@ -1,0 +1,206 @@
+/* Variables */
+:root {
+  --search-box-height: 50px;
+  --background-color: #282838;
+  --outline-color: #dedbd8;
+  --selected-color: #2274a5;
+  --font-color: #000000;
+  --focus-color: #659157;
+  --selected-font-color: #ffffff;
+  --font: "arima-koshi", sans-serif;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "arima-koshi";
+  src: url(../fonts/arima-koshi/ArimaKoshi-Medium.otf);
+}
+
+body {
+  display: flex;
+  /* Stack */
+  flex-direction: column;
+  background-color: var(--background-color) !important;
+  /* Padding all sides */
+  padding-bottom: 30px;
+  font-family: var(--font);
+}
+
+header {
+  display: flex;
+  /* Double margin bottom to rest */
+  margin: 30px 30px 60px 30px;
+  font-family: var(--font);
+}
+
+/* The space to the left of the search area. Used as a buffer */
+#header-margin-left {
+  /* Grow ratio */
+  flex: 1;
+}
+
+/* The space to the right of the search area. Contains the sort box */
+#header-margin-right {
+  display: flex;
+  /* Grow ratio */
+  flex: 1;
+  /* Set to end of container */
+  justify-content: flex-end;
+}
+
+#search-container {
+  display: flex;
+  /* Grow ratio */
+  flex: 2;
+  height: 100px;
+  /* Stops bullying */
+  min-height: 3rem;
+  width: 100%;
+  border: 2px solid var(--outline-color);
+  /* Curve corners */
+  border-radius: 10px;
+  color: var(--outline-color);
+  height: var(--search-box-height);
+}
+
+#search-box {
+  /* Grow ratio */
+  flex: 1;
+  display: flex;
+  /* Stack and center all including contents */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+  /* Transparent to circumvent mozilla firefox bugs */
+  caret-color: transparent;
+  font-size: 1.4rem;
+  /* Stops bullying */
+  min-width: 300px;
+  padding-left: 60px;
+}
+
+#search-button {
+  display: flex;
+  /* Stack */
+  flex-direction: column;
+
+  justify-content: center;
+  width: 60px;
+  border-left: 2px solid var(--outline-color);
+}
+
+/* search button image */
+#search-go-img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+/* Grid of song cards */
+.grid-container {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fill, 400px);
+  justify-content: space-around;
+  font-family: var(--font);
+}
+
+/* Song card */
+.grid-item {
+  display: flex;
+  /* Stack */
+  flex-direction: column;
+  height: 520px;
+  background-color: var(--outline-color);
+  /* round edges */
+  border-radius: 30px;
+  padding: 10px;
+}
+
+/* Song art wrap */
+.img-wrap {
+  flex: 2;
+}
+
+/* Song art */
+.img-wrap img {
+  height: 100%;
+  width: 100%;
+  /* Round edges */
+  border-radius: 20px;
+}
+
+/* Song information wrap */
+.info-wrap {
+  /* grow ration */
+  flex: 1;
+  font-size: 1.1rem;
+  /* Stack and center */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+/* Sort button */
+.dropdown button {
+  background-color: var(--outline-color);
+  height: 50px;
+  width: 160px;
+  /* Round edges */
+  border-radius: 10px;
+  /* Offset */
+  margin-right: 40px;
+}
+
+/* Sort options */
+.dropdown-toggle:active,
+.open .dropdown-toggle {
+  background: var(--outline-color) !important;
+  color: var(--font-color) !important;
+}
+
+/* Remove padding */
+.dropdown-menu {
+  padding: 0px !important;
+}
+
+.dropdown-item {
+  /* Bigger boxes */
+  padding: 10px !important;
+  /* Center text */
+  text-align: center !important;
+}
+
+/* The currently selected sort option */
+.selected-item {
+  background-color: var(--selected-color) !important;
+  color: var(--selected-font-color) !important;
+}
+
+/* The dividers separating the dropdown items */
+.dropdown-divider {
+  margin: 0px !important;
+}
+
+/* Make drop down match pallete */
+.dropdown-menu {
+  background-color: var(--outline-color) !important;
+}
+
+/* Change color on search box focus */
+.search-focused {
+  border: 2px solid var(--focus-color) !important;
+}
+
+/* Change color on search box focus */
+.go-button-focus {
+  border-left: 2px solid var(--focus-color) !important;
+}
+
+/* Stops the dotted lines on focus */
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}

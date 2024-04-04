@@ -1,0 +1,8 @@
+[21-Oct-2021 23:58:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function array_sort_by_column() in C:\xampp\htdocs\index.php:83
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\index.php on line 83
+[21-Oct-2021 23:58:23 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function array_sort_by_column() in C:\xampp\htdocs\index.php:83
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\index.php on line 83
